@@ -1,3 +1,4 @@
+@import url(../rotation/rotation.css);
 .page {
   min-width: 1100px;
   /* мы ещё не умеем делать мобильную версию сайта, */
@@ -24,6 +25,7 @@
   background-color: #f2f2f2;
   z-index: 0;
   margin-bottom: 100px;
+  overflow: hidden;
   /* выше установили ограничения для секции */
 }
 
@@ -52,6 +54,11 @@
   position: relative;
   text-decoration: none;
   color: #2f80ed;
+}
+
+.header__link:hover {
+  transition: linear;
+  opacity: .5;
 }
 
 .header__main-illustration {
@@ -138,6 +145,92 @@
 
 
 /* ------------------------------------------------
+          оформление секции techniques
+ ----------------------------------------------- */
+
+.techniques {
+  width: 80%;
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 920px;
+}
+
+.cards__item {
+  margin-right: 100px;
+  margin-top: 60px;
+  width: 240px;
+}
+
+.cards__item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+.cards__image {
+  margin: 0 40px 43px 40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+
+.cards__title {
+  margin-bottom: 16px;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.cards__description {
+  line-height: 23px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+/* ------------------------------------------------
+          оформление секции video
+ ----------------------------------------------- */
+
+ .video {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .video__iframes {
+   margin: 50px auto 0 auto;
+ }
+
+ .video__iframe {
+   margin-right: 20px;
+   position: relative;
+   bottom: -50px;
+ }
+
+ .video__iframe:nth-of-type(2n) {
+   margin-right: 0;
+ }
+
+
+ /* ------------------------------------------------
+          оформление секции oakley
+ ----------------------------------------------- */
+
+ .oakley {
+   padding: 160px 0 80px 0;
+   background-color: #f2f2f2;
+ }
+
+
+/* ------------------------------------------------
           оформление секции digits
  ----------------------------------------------- */
 
@@ -201,10 +294,81 @@
 
 
 /* ------------------------------------------------
+          оформление секции khan
+ ----------------------------------------------- */
+
+ .khan {
+  background-color: #f2f2f2;
+  padding-top: 105px;
+ }
+
+ .khan__container {
+   width: 80%;
+   margin: auto;
+ }
+
+ .khan__author {
+   line-height: 42px;
+   font-size: 30px;
+   margin: 0;
+ }
+
+ .khan__title {
+   line-height: 1.15;
+   font-size: 60px;
+   font-weight: bold;
+   margin: 0;
+ }
+
+ .khan__quote {
+   width: 790px;
+   margin: 50px auto 36px 0;
+   line-height: 34px;
+   font-size: 24px;
+ }
+
+ .khan__quote-author {
+   margin-bottom: 10px;
+   line-height: 1.15;
+   font-size: 24px;
+   font-weight: bold;
+ }
+
+ .khan__quote-author-subline {
+   margin-bottom: 68px;
+   line-height: 1.15;
+   font-size: 24px;
+ }
+
+ .khan__book-container {
+   display: flex;
+   align-items: flex-start;
+ }
+
+ .khan__book-pic {
+   width: 608px;
+   height: 620px;
+   margin-right: 48px;
+ }
+
+ .khan__buy-link {
+   line-height: 42px;
+   font-size: 30px;
+   text-decoration: none;
+ }
+
+ .khan__buy-link:hover {
+   transition: linear;
+   opacity: .5;
+ }
+
+
+/* ------------------------------------------------
           оформление секции feiman
  ----------------------------------------------- */
 
 .feinman {
+  margin-bottom: 100px;
   height: 790px;
   background-color: #f2f2f2;
   background-image: url(../images/feynman.png);
@@ -219,7 +383,7 @@
 .feinman__title {
   display: flex;
   justify-content: center;
-  margin: 100px auto 70px auto;
+  margin: 0 auto 70px auto;
   width: 648px;
   text-align: center;
   line-height: 1.15;
@@ -243,6 +407,11 @@
   color: black;
   line-height: 51px;
   font-size: 36px;
+}
+
+.feinman__link:hover {
+  transition: linear;
+  opacity: .5;
 }
 
 
@@ -298,6 +467,35 @@
 }
 
 /* ------------------------------------------------
+          оформление секции resources
+ ----------------------------------------------- */
+
+ .resources {
+   padding: 100px 0 217px 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .resources__logo-zone {
+   display: flex;
+   justify-content: center;
+   width: 1100px;
+   margin: 80px auto 0 auto;
+ }
+
+ .resources__logo {
+   width: 270px;
+   height: 38px;
+   margin: 0 auto;
+ }
+
+ .resources__logo:hover {
+  transition: linear;
+  opacity: .8;
+}
+
+/* ------------------------------------------------
           оформление секции footer
  ----------------------------------------------- */
 
@@ -306,7 +504,6 @@
   flex-direction: row;
   min-height: 350px;
   position: relative;
-  padding-top: 60px;
   color: white;
   background-color: #1f1f1f;
 }
@@ -324,8 +521,7 @@
   line-height: 25px;
   font-size: 18px;
 }
-/* так и не понял в чем сокральный смысл модификатора
-content_info, ничего лучше чем маргины не придумал(( */
+
 .footer__column_content_info {
   margin: 0 0 16px 0;
 }
@@ -369,6 +565,11 @@ content_info, ничего лучше чем маргины не придума�
   font-weight: normal;
   color: white;
   text-decoration: none;
+}
+
+.footer__column-link:hover {
+  transition: linear;
+  opacity: .5;
 }
 
 .footer__social-icon {
